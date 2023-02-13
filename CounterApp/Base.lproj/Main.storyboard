@@ -16,22 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Значение счётчика:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOL-n5-zQl">
-                                <rect key="frame" x="0.0" y="154" width="393" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счётчика:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOL-n5-zQl">
+                                <rect key="frame" x="1" y="154" width="393" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waU-uK-EkX">
-                                <rect key="frame" x="0.0" y="229" width="393" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waU-uK-EkX">
+                                <rect key="frame" x="1" y="229" width="393" height="161.33333333333337"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="135"/>
                                 <color key="textColor" systemColor="systemPurpleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eII-Bs-WRL">
-                                <rect key="frame" x="89" y="702" width="215" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eII-Bs-WRL">
+                                <rect key="frame" x="81" y="665" width="231" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="3nW-Zx-m0a"/>
+                                    <constraint firstAttribute="height" constant="63" id="fhH-hu-sud"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemGray2Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Щёлк!" cornerStyle="capsule">
@@ -46,6 +47,18 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mOL-n5-zQl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1" id="6Eo-BU-xET"/>
+                            <constraint firstItem="mOL-n5-zQl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="1" id="AkP-qq-jnV"/>
+                            <constraint firstItem="eII-Bs-WRL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="Da8-f8-ywC"/>
+                            <constraint firstItem="mOL-n5-zQl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="TFb-HM-5qR"/>
+                            <constraint firstItem="waU-uK-EkX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="1" id="XFu-k8-5cp"/>
+                            <constraint firstItem="waU-uK-EkX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1" id="dJU-4x-8jy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eII-Bs-WRL" secondAttribute="trailing" constant="81" id="e4C-Wi-1IZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eII-Bs-WRL" secondAttribute="bottom" constant="90" id="k3u-jv-M9q"/>
+                            <constraint firstItem="waU-uK-EkX" firstAttribute="top" secondItem="mOL-n5-zQl" secondAttribute="bottom" constant="39" id="n8c-Ac-YIq"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="counterValue" destination="waU-uK-EkX" id="jlK-5c-XUs"/>
