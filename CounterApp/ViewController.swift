@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print("Запущено, значение сounter = \(counter)")
+        if UserDefaults.standard.value(forKey:"counter" ) != nil {
+            counter = UserDefaults.standard.value(forKey: "counter") as! Int
+        }
         counterValue.text = "\(counter)"
         
         // Do any additional setup after loading the view.
@@ -31,6 +34,7 @@ class ViewController: UIViewController {
         generator.impactOccurred()
         counter+=1
         counterValue.text = "\(counter)"
+        UserDefaults.standard.setValue(counter, forKey: "counter")
 //        print("Кнопка нажата")
 //        print("Значение counter = \(counter)")
     }
@@ -40,6 +44,7 @@ class ViewController: UIViewController {
         if (counter > 0) {
             counter-=1
             counterValue.text = "\(counter)"
+            UserDefaults.standard.setValue(counter, forKey: "counter")
         }
     }
 }
