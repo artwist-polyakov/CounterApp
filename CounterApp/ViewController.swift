@@ -7,12 +7,12 @@
 
 import UIKit
 
-extension UINavigationController {
-    //блокируем переход в портретный режим
-    override open var shouldAutorotate: Bool {
-        return false
-    }
-}
+//extension UINavigationController {
+//    //блокируем переход в портретный режим
+//    override open var shouldAutorotate: Bool {
+//        return false
+//    }
+//}
 
 class ViewController: UIViewController {
     
@@ -21,9 +21,9 @@ class ViewController: UIViewController {
     @IBOutlet private var swipeRight: UISwipeGestureRecognizer!
     @IBOutlet weak private var counterValue: UILabel!
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return UIInterfaceOrientationMask.portrait
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
