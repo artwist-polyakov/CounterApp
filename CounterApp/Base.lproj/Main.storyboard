@@ -66,12 +66,18 @@
                     <connections>
                         <outlet property="counterValue" destination="waU-uK-EkX" id="jlK-5c-XUs"/>
                         <outlet property="swipeLeft" destination="6LV-wK-txy" id="99p-f2-S8o"/>
+                        <outlet property="swipeRight" destination="ajW-lR-B7j" id="lke-nK-hHW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="6LV-wK-txy">
                     <connections>
                         <action selector="swipeLeftAction:" destination="BYZ-38-t0r" id="BWD-ov-H7U"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="ajW-lR-B7j">
+                    <connections>
+                        <action selector="swipeRightAction:" destination="BYZ-38-t0r" id="xaU-tV-2wj"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     private var counter: Int = 0
     @IBOutlet private var swipeLeft: UISwipeGestureRecognizer!
+    @IBOutlet private var swipeRight: UISwipeGestureRecognizer!
     @IBOutlet weak private var counterValue: UILabel!
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -59,5 +60,14 @@ class ViewController: UIViewController {
             UserDefaults.standard.setValue(counter, forKey: "counter")
         }
     }
+    
+    
+    @IBAction private func swipeRightAction(_ sender: Any) {
+        
+        counter+=1
+        counterValue.text = "\(counter)"
+        UserDefaults.standard.setValue(counter, forKey: "counter")
+    }
+    
 }
 
