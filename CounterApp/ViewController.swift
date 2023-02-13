@@ -16,9 +16,9 @@ extension UINavigationController {
 
 class ViewController: UIViewController {
     
-    var counter: Int = 0
-    @IBOutlet var swipeLeft: UISwipeGestureRecognizer!
-    @IBOutlet weak var counterValue: UILabel!
+    private var counter: Int = 0
+    @IBOutlet private var swipeLeft: UISwipeGestureRecognizer!
+    @IBOutlet weak private var counterValue: UILabel!
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func buttonTap(_ sender: Any) {
+    @IBAction private func buttonTap(_ sender: Any) {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.prepare()
         generator.impactOccurred()
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
     
 
-    @IBAction func swipeLeftAction(_ sender: Any) {
+    @IBAction private func swipeLeftAction(_ sender: Any) {
         if (counter > 0) {
             counter-=1
             counterValue.text = "\(counter)"
