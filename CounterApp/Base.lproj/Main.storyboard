@@ -59,12 +59,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eII-Bs-WRL" secondAttribute="bottom" constant="90" id="k3u-jv-M9q"/>
                             <constraint firstItem="waU-uK-EkX" firstAttribute="top" secondItem="mOL-n5-zQl" secondAttribute="bottom" constant="39" id="n8c-Ac-YIq"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6LV-wK-txy" appends="YES" id="gvY-jt-sbj"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="counterValue" destination="waU-uK-EkX" id="jlK-5c-XUs"/>
+                        <outlet property="swipeLeft" destination="6LV-wK-txy" id="99p-f2-S8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="6LV-wK-txy">
+                    <connections>
+                        <action selector="swipeLeftAction:" destination="BYZ-38-t0r" id="BWD-ov-H7U"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
         </scene>

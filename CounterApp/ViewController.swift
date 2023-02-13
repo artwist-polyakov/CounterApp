@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     var counter: Int = 0
 
+    @IBOutlet var swipeLeft: UISwipeGestureRecognizer!
+    
     @IBOutlet weak var counterValue: UILabel!
 
 
@@ -32,6 +34,13 @@ class ViewController: UIViewController {
 //        print("Кнопка нажата")
 //        print("Значение counter = \(counter)")
     }
+    
 
+    @IBAction func swipeLeftAction(_ sender: Any) {
+        if (counter > 0) {
+            counter-=1
+            counterValue.text = "\(counter)"
+        }
+    }
 }
 
