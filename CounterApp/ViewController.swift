@@ -11,10 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     private var counter: Int = 0
-    @IBOutlet private var swipeLeft: UISwipeGestureRecognizer!
-    @IBOutlet private var swipeRight: UISwipeGestureRecognizer!
     @IBOutlet weak private var counterValue: UILabel!
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +26,15 @@ class ViewController: UIViewController {
             counter = UserDefaults.standard.value(forKey: "counter") as! Int
         }
         counterValue.text = "\(counter)"
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+            self.view.addGestureRecognizer(swipeRight)
+
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(swipeLeft)
+
         
     }
 
@@ -42,23 +50,43 @@ class ViewController: UIViewController {
 //        print("Значение counter = \(counter)")
     }
     
+    private func respondToSwipeGesture(gesture: UIGestureRecognizer)
+    {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer
+        {
+            switch swipeGesture.direction
+            {
+                case UISwipeGestureRecognizer.Direction.right:
+                         //write your logic for right swipe
+                    counerIncrimention()
+                        
 
-    @IBAction private func swipeLeftAction(_ sender: Any) {
-        if (counter > 0) {
-            counter-=1
-            counterValue.text = "\(counter)"
-            //сохраняем переменную счетчика в UserDefaults
-            UserDefaults.standard.setValue(counter, forKey: "counter")
+                case UISwipeGestureRecognizer.Direction.left:
+                         //write your logic for left swipe
+                    counterDecrimention ()
+
+                default:
+                    break
+            }
         }
     }
     
-    
-    @IBAction private func swipeRightAction(_ sender: Any) {
-        
+    private func counerIncrimention () {
         counter+=1
         counterValue.text = "\(counter)"
+        //сохраняем переменную счетчика в UserDefaults
         UserDefaults.standard.setValue(counter, forKey: "counter")
     }
+    
+    private func counterDecrimention () {
+        if counter > 0 {
+            counter -= 1
+            counterValue.text = "\(counter)"
+            UserDefaults.standard.setValue(counter, forKey: "counter")
+        }
+        
+    }
+    
     
 }
 
